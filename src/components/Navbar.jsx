@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,22 +10,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="new-nav">
-      <div className="nav_part1 new-nav_part1">
-        <h2 className="magnet new-magnet">Siddharth Patel</h2>
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <h2 className="magnet">Siddharth Patel</h2>
       </div>
-      <div className="nav_part2 new-nav_part2">
-        <h2 className="button menu new-menu" onClick={toggleMenu}>
-          <a className="ri-menu-line magnet new-magnet" href="javascript:void(0);"></a>
-        </h2>
-        <div className={`menu_non new-menu_non ${isMenuOpen ? "show" : ""}`}>
-          <h4 className="button magnet new-magnet">
+      <div className="navbar-menu">
+        <div className="menu-icon button magnet" onClick={toggleMenu}>
+          <span className="ri-menu-line"></span>
+        </div>
+        <div className={`menu-items ${isMenuOpen ? "show" : ""}`}>
+          <h4 className="button magnet">
             <Link to="/projects">Projects</Link>
           </h4>
-          <h4 className="button magnet new-magnet">
+          <h4 className="button magnet">
             <Link to="/about">About</Link>
           </h4>
-          <h4 className="button magnet new-magnet">
+          <h4 className="button magnet">
             <Link to="/contact">Contact</Link>
           </h4>
         </div>
